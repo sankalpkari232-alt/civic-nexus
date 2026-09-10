@@ -1,7 +1,23 @@
 {
-  "name":"civic-nexus-frontend",
-  "private":true,
-  "scripts":{"dev":"next dev","build":"next build","start":"next start","lint":"next lint"},
-  "dependencies":{"next":"latest","react":"latest","react-dom":"latest","recharts":"latest"},
-  "devDependencies":{"typescript":"latest","tailwindcss":"latest","@types/node":"latest","@types/react":"latest","@types/react-dom":"latest"}
+  "name": "civic-nexus-frontend",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "recharts": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "tailwindcss": "latest",
+    "typescript": "latest"
+  }
 }
