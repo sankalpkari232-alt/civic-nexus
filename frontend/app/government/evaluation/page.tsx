@@ -5,12 +5,12 @@ import { useState } from "react";
 export default function Evaluation() {
   const [submitted, setSubmitted] = useState(false);
 
-  const criteria = [
-    ["Technical Capability", 25],
-    ["Innovation", 25],
-    ["Scalability", 25],
-    ["Cost Effectiveness", 25],
-  ];
+const criteria: [string, number][] = [
+  ["Technical Capability", 25],
+  ["Innovation", 25],
+  ["Scalability", 25],
+  ["Cost Effectiveness", 25],
+];
 
   return (
     <main className="main">
