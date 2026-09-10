@@ -1,0 +1,175 @@
+*{box-sizing:border-box} body{margin:0;font-family:Inter,Arial,sans-serif;background:#f6f7f9;color:#111827}.topbar{height:68px;border-bottom:1px solid #e5e7eb;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 6%;position:sticky;top:0;z-index:10}.brand{font-size:21px;font-weight:800;text-decoration:none;color:#111827}.topbar nav{display:flex;gap:24px}.topbar nav a{color:#4b5563;text-decoration:none}.container{max-width:1180px;margin:auto;padding:48px 24px}.hero{padding:90px 24px 70px;max-width:1100px;margin:auto}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:12px;font-weight:700;color:#6b7280}.hero h1{font-size:clamp(42px,7vw,76px);line-height:1.02;margin:14px 0}.hero p{font-size:20px;line-height:1.6;color:#4b5563;max-width:760px}.actions{display:flex;gap:12px;margin:30px 0}.btn{border:1px solid #d1d5db;border-radius:10px;padding:12px 18px;text-decoration:none;display:inline-block;background:#111827;color:#fff;cursor:pointer}.btn.secondary{background:#fff;color:#111827}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:20px}.muted{color:#6b7280}.stat{font-size:30px;font-weight:800;margin-top:6px}.process{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:30px}.process .card{text-align:center}.table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #e5e7eb;border-radius:14px;overflow:hidden}.table th,.table td{text-align:left;padding:14px;border-bottom:1px solid #eee}.badge{display:inline-block;border-radius:999px;background:#eef2ff;padding:5px 9px;font-size:12px;font-weight:700}.sidebar-layout{display:grid;grid-template-columns:220px 1fr;min-height:calc(100vh - 68px)}.sidebar{background:#fff;border-right:1px solid #e5e7eb;padding:24px}.sidebar a{display:block;padding:10px 0;color:#4b5563;text-decoration:none}.main{padding:34px}.section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.form{display:grid;gap:14px;max-width:760px}.input,.textarea{width:100%;padding:12px;border:1px solid #d1d5db;border-radius:9px;background:#fff}.textarea{min-height:130px}.kpi{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid #eee}.score{font-size:42px;font-weight:800}@media(max-width:800px){.grid,.grid3,.process{grid-template-columns:1fr 1fr}.sidebar-layout{grid-template-columns:1fr}.sidebar{display:none}}
+/* CIVIC NEXUS HOMEPAGE */
+
+.navbar {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 7%;
+  border-bottom: 1px solid #e5e7eb;
+  background: white;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #18243a;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #596273;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.hero {
+  padding: 90px 8% 70px;
+  background: #f8fafc;
+  min-height: calc(100vh - 72px);
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #667085;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 6vw, 72px);
+  line-height: 1.03;
+  color: #17233a;
+  margin: 0;
+  max-width: 850px;
+}
+
+.hero > p {
+  max-width: 700px;
+  margin-top: 25px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #667085;
+}
+
+.login-section {
+  margin-top: 55px;
+}
+
+.login-section h2 {
+  font-size: 22px;
+  color: #17233a;
+  margin-bottom: 20px;
+}
+
+.portal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+}
+
+.portal-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 25px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.portal-card:hover {
+  transform: translateY(-3px);
+  border-color: #94a3b8;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.portal-icon {
+  min-width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #17233a;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.portal-card h3 {
+  margin: 0 0 7px;
+  color: #17233a;
+  font-size: 18px;
+}
+
+.portal-card p {
+  margin: 0;
+  color: #667085;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.arrow {
+  margin-left: auto;
+  font-size: 24px;
+  color: #17233a;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 75px;
+  max-width: 1100px;
+}
+
+.features strong {
+  font-size: 12px;
+  color: #98a2b3;
+}
+
+.features h3 {
+  color: #17233a;
+  margin: 10px 0 7px;
+}
+
+.features p {
+  color: #667085;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (max-width: 800px) {
+  .portal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .features {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero {
+    padding: 60px 6%;
+  }
+}
+
+@media (max-width: 500px) {
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+}
