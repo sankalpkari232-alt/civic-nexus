@@ -2,239 +2,375 @@
 
 import { useState } from "react";
 
-export default function ApplicationsPage() {
-  const [selected, setSelected] = useState(false);
+const applications = [
+  {
+    id: "APP-2026-021",
+    challenge: "Smart Waste Collection",
+    department: "Municipal Waste Department",
+    match: 94,
+    status: "Under Evaluation",
+    submitted: "28 Aug 2026",
+    budget: "₹10,00,000",
+  },
+  {
+    id: "APP-2026-018",
+    challenge: "Citizen Grievance Automation",
+    department: "Urban Administration Department",
+    match: 89,
+    status: "Shortlisted",
+    submitted: "24 Aug 2026",
+    budget: "₹7,50,000",
+  },
+  {
+    id: "APP-2026-012",
+    challenge: "Intelligent Traffic Management",
+    department: "Transport Department",
+    match: 84,
+    status: "Submitted",
+    submitted: "19 Aug 2026",
+    budget: "₹12,00,000",
+  },
+];
+
+export default function StartupApplications() {
+  const [selected, setSelected] = useState(applications[0]);
 
   return (
-    <main className="min-h-screen bg-slate-50 p-8">
-      <div className="mx-auto max-w-6xl">
+    <main
+      style={{
+        minHeight: "100vh",
+        background: "#f5f7fb",
+        color: "#172033",
+        padding: "42px 50px",
+      }}
+    >
+      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+        <div style={{ marginBottom: 34 }}>
+          <div
+            style={{
+              fontSize: 13,
+              fontWeight: 700,
+              color: "#635bff",
+              textTransform: "uppercase",
+              letterSpacing: 1.2,
+              marginBottom: 8,
+            }}
+          >
+            Startup Portal
+          </div>
 
-        {/* Header */}
-        <div className="mb-8">
-          <p className="text-sm font-semibold text-blue-600">
-            CIVIC NEXUS • STARTUP PORTAL
-          </p>
-          <h1 className="mt-2 text-3xl font-bold text-slate-900">
+          <h1
+            style={{
+              fontSize: 34,
+              margin: 0,
+              fontWeight: 800,
+            }}
+          >
             My Applications
           </h1>
-          <p className="mt-2 text-slate-500">
-            Track your government innovation opportunities from application to pilot.
+
+          <p
+            style={{
+              marginTop: 10,
+              color: "#687386",
+              fontSize: 16,
+            }}
+          >
+            Track your government challenge applications and evaluation status.
           </p>
         </div>
 
-        {/* Stats */}
-        <div className="grid gap-4 md:grid-cols-4 mb-8">
-          <div className="rounded-2xl bg-white p-5 shadow-sm border">
-            <p className="text-sm text-slate-500">Total Applications</p>
-            <p className="mt-2 text-3xl font-bold">4</p>
-          </div>
-
-          <div className="rounded-2xl bg-white p-5 shadow-sm border">
-            <p className="text-sm text-slate-500">Under Evaluation</p>
-            <p className="mt-2 text-3xl font-bold text-amber-600">1</p>
-          </div>
-
-          <div className="rounded-2xl bg-white p-5 shadow-sm border">
-            <p className="text-sm text-slate-500">Selected</p>
-            <p className="mt-2 text-3xl font-bold text-green-600">2</p>
-          </div>
-
-          <div className="rounded-2xl bg-white p-5 shadow-sm border">
-            <p className="text-sm text-slate-500">Active Pilots</p>
-            <p className="mt-2 text-3xl font-bold text-blue-600">1</p>
-          </div>
-        </div>
-
-        {/* Main Application */}
-        <div className="rounded-2xl bg-white border shadow-sm overflow-hidden">
-
-          <div className="p-6 border-b flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <div>
-              <div className="flex items-center gap-3">
-                <h2 className="text-xl font-bold text-slate-900">
-                  Smart Municipal Waste Optimization
-                </h2>
-
-                <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-700">
-                  Selected for Pilot
-                </span>
-              </div>
-
-              <p className="mt-2 text-sm text-slate-500">
-                Municipal Corporation • Urban Governance
-              </p>
-
-              <p className="mt-1 text-xs text-slate-400">
-                Application ID: CN-APP-2026-021
-              </p>
-            </div>
-
-            <div className="text-right">
-              <p className="text-sm text-slate-500">AI Match</p>
-              <p className="text-2xl font-bold text-blue-600">94%</p>
-            </div>
-          </div>
-
-          {/* Progress */}
-          <div className="p-6">
-            <h3 className="font-semibold text-slate-900 mb-6">
-              Application Journey
-            </h3>
-
-            <div className="grid md:grid-cols-4 gap-4">
-
-              <div className="rounded-xl border border-green-200 bg-green-50 p-4">
-                <div className="text-xl mb-2">✓</div>
-                <p className="font-semibold text-green-800">
-                  Application Submitted
-                </p>
-                <p className="text-xs text-green-700 mt-1">
-                  02 Sept 2026
-                </p>
-              </div>
-
-              <div className="rounded-xl border border-green-200 bg-green-50 p-4">
-                <div className="text-xl mb-2">✓</div>
-                <p className="font-semibold text-green-800">
-                  Expert Evaluation
-                </p>
-                <p className="text-xs text-green-700 mt-1">
-                  Score: 88/100
-                </p>
-              </div>
-
-              <div className="rounded-xl border border-green-200 bg-green-50 p-4">
-                <div className="text-xl mb-2">✓</div>
-                <p className="font-semibold text-green-800">
-                  Selected for Pilot
-                </p>
-                <p className="text-xs text-green-700 mt-1">
-                  05 Sept 2026
-                </p>
-              </div>
-
-              <div className="rounded-xl border border-blue-200 bg-blue-50 p-4">
-                <div className="text-xl mb-2">→</div>
-                <p className="font-semibold text-blue-800">
-                  Pilot Active
-                </p>
-                <p className="text-xs text-blue-700 mt-1">
-                  Week 6 of 8
-                </p>
-              </div>
-
-            </div>
-          </div>
-
-          {/* Application Details */}
-          <div className="grid md:grid-cols-3 gap-4 p-6 border-t bg-slate-50">
-
-            <div>
-              <p className="text-xs text-slate-500">Startup</p>
-              <p className="font-semibold mt-1">GreenRoute AI</p>
-            </div>
-
-            <div>
-              <p className="text-xs text-slate-500">Pilot Duration</p>
-              <p className="font-semibold mt-1">8 Weeks</p>
-            </div>
-
-            <div>
-              <p className="text-xs text-slate-500">Pilot Budget</p>
-              <p className="font-semibold mt-1">₹10,00,000</p>
-            </div>
-
-          </div>
-
-          {/* Actions */}
-          <div className="p-6 border-t flex flex-wrap gap-3">
-
-            <button
-              onClick={() => setSelected(true)}
-              className="rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800"
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(4, 1fr)",
+            gap: 18,
+            marginBottom: 28,
+          }}
+        >
+          {[
+            ["Total Applications", "3", "#635bff"],
+            ["Shortlisted", "1", "#16a34a"],
+            ["Under Evaluation", "1", "#f59e0b"],
+            ["Avg. AI Match", "89%", "#0891b2"],
+          ].map(([label, value, color]) => (
+            <div
+              key={label}
+              style={{
+                background: "#fff",
+                borderRadius: 16,
+                padding: 22,
+                border: "1px solid #e6e9ef",
+                boxShadow: "0 6px 18px rgba(20,30,50,0.04)",
+              }}
             >
-              View Application Details
-            </button>
+              <div style={{ color: "#778196", fontSize: 13 }}>
+                {label}
+              </div>
 
-            <a
-              href="/startup/pilots"
-              className="rounded-xl border border-blue-200 bg-blue-50 px-5 py-3 text-sm font-semibold text-blue-700 hover:bg-blue-100"
+              <div
+                style={{
+                  fontSize: 28,
+                  fontWeight: 800,
+                  color,
+                  marginTop: 8,
+                }}
+              >
+                {value}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1.35fr 0.9fr",
+            gap: 22,
+          }}
+        >
+          <section
+            style={{
+              background: "#fff",
+              border: "1px solid #e6e9ef",
+              borderRadius: 18,
+              overflow: "hidden",
+              boxShadow: "0 6px 18px rgba(20,30,50,0.04)",
+            }}
+          >
+            <div
+              style={{
+                padding: 22,
+                borderBottom: "1px solid #edf0f4",
+              }}
             >
-              Open Pilot
-            </a>
-
-          </div>
-
-          {selected && (
-            <div className="mx-6 mb-6 rounded-xl border border-blue-200 bg-blue-50 p-5">
-              <p className="font-semibold text-blue-900">
-                Application Verified
-              </p>
-              <p className="mt-1 text-sm text-blue-800">
-                Your eligibility, technical evaluation and pilot readiness
-                have been reviewed by the evaluation panel.
-              </p>
+              <h2 style={{ margin: 0, fontSize: 19 }}>
+                Submitted Applications
+              </h2>
             </div>
-          )}
 
+            {applications.map((app) => (
+              <button
+                key={app.id}
+                onClick={() => setSelected(app)}
+                style={{
+                  width: "100%",
+                  textAlign: "left",
+                  border: "none",
+                  borderBottom: "1px solid #edf0f4",
+                  background:
+                    selected.id === app.id ? "#f5f3ff" : "#fff",
+                  padding: 22,
+                  cursor: "pointer",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    gap: 15,
+                  }}
+                >
+                  <div>
+                    <div
+                      style={{
+                        fontSize: 17,
+                        fontWeight: 750,
+                        color: "#172033",
+                      }}
+                    >
+                      {app.challenge}
+                    </div>
+
+                    <div
+                      style={{
+                        marginTop: 6,
+                        color: "#778196",
+                        fontSize: 13,
+                      }}
+                    >
+                      {app.department}
+                    </div>
+
+                    <div
+                      style={{
+                        marginTop: 12,
+                        color: "#9aa3b2",
+                        fontSize: 12,
+                      }}
+                    >
+                      {app.id} • Submitted {app.submitted}
+                    </div>
+                  </div>
+
+                  <div style={{ textAlign: "right" }}>
+                    <div
+                      style={{
+                        display: "inline-block",
+                        background: "#ede9fe",
+                        color: "#635bff",
+                        borderRadius: 999,
+                        padding: "5px 10px",
+                        fontSize: 12,
+                        fontWeight: 700,
+                      }}
+                    >
+                      {app.match}% AI Match
+                    </div>
+
+                    <div
+                      style={{
+                        marginTop: 10,
+                        fontSize: 12,
+                        fontWeight: 700,
+                        color:
+                          app.status === "Shortlisted"
+                            ? "#16a34a"
+                            : app.status === "Under Evaluation"
+                            ? "#d97706"
+                            : "#64748b",
+                      }}
+                    >
+                      {app.status}
+                    </div>
+                  </div>
+                </div>
+              </button>
+            ))}
+          </section>
+
+          <section
+            style={{
+              background: "#fff",
+              border: "1px solid #e6e9ef",
+              borderRadius: 18,
+              padding: 26,
+              boxShadow: "0 6px 18px rgba(20,30,50,0.04)",
+              height: "fit-content",
+            }}
+          >
+            <div
+              style={{
+                fontSize: 12,
+                color: "#635bff",
+                fontWeight: 800,
+                textTransform: "uppercase",
+                letterSpacing: 1,
+              }}
+            >
+              Application Details
+            </div>
+
+            <h2
+              style={{
+                fontSize: 23,
+                margin: "10px 0 6px",
+              }}
+            >
+              {selected.challenge}
+            </h2>
+
+            <p
+              style={{
+                color: "#778196",
+                fontSize: 14,
+                marginTop: 0,
+              }}
+            >
+              {selected.department}
+            </p>
+
+            <div
+              style={{
+                marginTop: 24,
+                padding: 18,
+                background: "#f7f8fc",
+                borderRadius: 14,
+              }}
+            >
+              <div style={{ color: "#778196", fontSize: 12 }}>
+                AI Compatibility Score
+              </div>
+
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 14,
+                  marginTop: 8,
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: 34,
+                    fontWeight: 850,
+                    color: "#635bff",
+                  }}
+                >
+                  {selected.match}%
+                </div>
+
+                <div
+                  style={{
+                    flex: 1,
+                    height: 8,
+                    background: "#e4e7ee",
+                    borderRadius: 20,
+                  }}
+                >
+                  <div
+                    style={{
+                      width: `${selected.match}%`,
+                      height: "100%",
+                      background: "#635bff",
+                      borderRadius: 20,
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div style={{ marginTop: 22 }}>
+              {[
+                ["Application ID", selected.id],
+                ["Status", selected.status],
+                ["Submitted", selected.submitted],
+                ["Proposed Budget", selected.budget],
+              ].map(([label, value]) => (
+                <div
+                  key={label}
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    padding: "13px 0",
+                    borderBottom: "1px solid #edf0f4",
+                    fontSize: 13,
+                  }}
+                >
+                  <span style={{ color: "#778196" }}>{label}</span>
+                  <strong>{value}</strong>
+                </div>
+              ))}
+            </div>
+
+            <div
+              style={{
+                marginTop: 22,
+                padding: 16,
+                background: "#eefbf3",
+                borderRadius: 12,
+                color: "#166534",
+                fontSize: 13,
+                lineHeight: 1.5,
+              }}
+            >
+              <strong>Next Step</strong>
+              <br />
+              Government evaluators are reviewing your application. You will
+              be notified when the evaluation stage is completed.
+            </div>
+          </section>
         </div>
-
-        {/* Other applications */}
-        <div className="mt-8 rounded-2xl bg-white border shadow-sm p-6">
-          <h2 className="text-xl font-bold text-slate-900">
-            Other Applications
-          </h2>
-
-          <div className="mt-5 space-y-3">
-
-            <div className="flex items-center justify-between rounded-xl border p-4">
-              <div>
-                <p className="font-semibold">
-                  Predictive Flood Risk Monitoring
-                </p>
-                <p className="text-sm text-slate-500">
-                  Disaster Management Department
-                </p>
-              </div>
-
-              <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-700">
-                Under Evaluation
-              </span>
-            </div>
-
-            <div className="flex items-center justify-between rounded-xl border p-4">
-              <div>
-                <p className="font-semibold">
-                  AI Public Transport Optimization
-                </p>
-                <p className="text-sm text-slate-500">
-                  Urban Transport Authority
-                </p>
-              </div>
-
-              <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-700">
-                Selected
-              </span>
-            </div>
-
-            <div className="flex items-center justify-between rounded-xl border p-4">
-              <div>
-                <p className="font-semibold">
-                  Smart Water Leak Detection
-                </p>
-                <p className="text-sm text-slate-500">
-                  Public Utilities Department
-                </p>
-              </div>
-
-              <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600">
-                Submitted
-              </span>
-            </div>
-
-          </div>
-        </div>
-
       </div>
     </main>
   );

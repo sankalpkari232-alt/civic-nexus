@@ -1,258 +1,466 @@
-"use client";
-
-import { useState } from "react";
-
-export default function Analytics() {
-  const [decision, setDecision] = useState("");
+export default function GovernmentAnalytics() {
+  const kpis = [
+    ["Collection Efficiency", "87%", "Target: 80%", "+18%"],
+    ["Fuel Consumption", "72%", "Target: 75%", "-14%"],
+    ["Missed Collections", "8%", "Target: <10%", "-32%"],
+    ["Citizen Satisfaction", "91%", "Target: 85%", "+12%"],
+  ];
 
   return (
-    <main className="main">
+    <main
+      style={{
+        minHeight: "100vh",
+        background: "#f5f7fb",
+        color: "#172033",
+        fontFamily: "Arial, sans-serif",
+        padding: "40px",
+      }}
+    >
+      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
 
-      <div className="section-title">
-        <div>
-          <div className="eyebrow">EVIDENCE-BASED PROCUREMENT</div>
-          <h1>Scale Recommendation</h1>
-          <p className="muted">
-            Turn verified pilot results into an evidence-based procurement decision.
-          </p>
-        </div>
-      </div>
-
-      <div className="card">
-
-        <div className="eyebrow">PILOT COMPLETION REPORT</div>
-
-        <h2>GreenRoute AI</h2>
-
-        <p className="muted">
-          Smart Municipal Waste Optimization · Pilot #CN-2026-014
-        </p>
-
-        <div className="grid">
-
-          <div className="card">
-            <div className="eyebrow">KPI 01</div>
-            <h2>Fuel Usage</h2>
-            <div className="stat">76%</div>
-            <p className="muted">
-              Target ≤ 80%
-            </p>
-            <span className="badge">
-              ACHIEVED
-            </span>
-          </div>
-
-          <div className="card">
-            <div className="eyebrow">KPI 02</div>
-            <h2>Missed Collections</h2>
-            <div className="stat">11%</div>
-            <p className="muted">
-              Target ≤ 12%
-            </p>
-            <span className="badge">
-              ACHIEVED
-            </span>
-          </div>
-
-          <div className="card">
-            <div className="eyebrow">KPI 03</div>
-            <h2>Route Efficiency</h2>
-            <div className="stat">81%</div>
-            <p className="muted">
-              Target ≥ 77%
-            </p>
-            <span className="badge">
-              ACHIEVED
-            </span>
-          </div>
-
-          <div className="card">
-            <div className="eyebrow">KPI 04</div>
-            <h2>User Satisfaction</h2>
-            <div className="stat">4.4/5</div>
-            <p className="muted">
-              Target ≥ 4.0/5
-            </p>
-            <span className="badge">
-              ACHIEVED
-            </span>
-          </div>
-
-        </div>
-
-      </div>
-
-      <div className="card" style={{ marginTop: "20px" }}>
-
-        <div className="eyebrow">AI EVIDENCE ANALYSIS</div>
-
-        <h2>Pilot Performance Summary</h2>
-
-        <p>
-          <b>4 out of 4 key performance indicators were achieved.</b>
-        </p>
-
-        <p className="muted">
-          The pilot demonstrates measurable improvement in operational
-          efficiency, reduced resource consumption and positive field
-          feedback. The solution appears suitable for expansion under
-          appropriate procurement and governance procedures.
-        </p>
-
+        {/* Header */}
         <div
-          className="card"
           style={{
-            marginTop: "20px",
-            textAlign: "center",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+            marginBottom: "30px",
           }}
         >
-
-          <div className="eyebrow">
-            CIVIC NEXUS RECOMMENDATION
-          </div>
-
-          <div className="stat">SCALE</div>
-
-          <h2>Recommend Scale-Up</h2>
-
-          <p className="muted">
-            Strong KPI performance + operational feasibility +
-            positive pilot evidence.
-          </p>
-
-        </div>
-
-      </div>
-
-      <div className="card" style={{ marginTop: "20px" }}>
-
-        <div className="eyebrow">SCALE OPTIONS</div>
-
-        <h2>Where should the solution go next?</h2>
-
-        <div className="grid3">
-
-          <div className="card">
-            <h3>🏙 Same Department</h3>
-            <p className="muted">
-              Expand to additional municipal zones.
-            </p>
-
-            <button
-              className="btn"
-              onClick={() => setDecision("Same Department")}
+          <div>
+            <div
+              style={{
+                fontSize: "12px",
+                fontWeight: 800,
+                letterSpacing: "2px",
+                color: "#4f46e5",
+                marginBottom: "8px",
+              }}
             >
-              Recommend
-            </button>
-          </div>
-
-          <div className="card">
-            <h3>📍 Other Districts</h3>
-            <p className="muted">
-              Replicate the solution across districts.
-            </p>
-
-            <button
-              className="btn"
-              onClick={() => setDecision("Other Districts")}
-            >
-              Recommend
-            </button>
-          </div>
-
-          <div className="card">
-            <h3>🏛 Other Departments</h3>
-            <p className="muted">
-              Explore adoption by other government departments.
-            </p>
-
-            <button
-              className="btn"
-              onClick={() => setDecision("Other Departments")}
-            >
-              Recommend
-            </button>
-          </div>
-
-        </div>
-
-        {decision && (
-          <div
-            className="card"
-            style={{
-              marginTop: "20px",
-              textAlign: "center",
-            }}
-          >
-
-            <div className="eyebrow">
-              DECISION RECORDED
+              EVIDENCE-BASED PROCUREMENT
             </div>
 
-            <h2>✓ {decision}</h2>
+            <h1 style={{ fontSize: "38px", margin: 0 }}>
+              Analytics & Scale
+            </h1>
 
-            <p className="muted">
-              Scale recommendation has been recorded for authorized
-              government review.
-            </p>
-
-          </div>
-        )}
-
-      </div>
-
-      <div className="card" style={{ marginTop: "20px" }}>
-
-        <div className="eyebrow">COMPLETE PROCUREMENT JOURNEY</div>
-
-        <div className="grid">
-
-          <div>
-            <h3>01 · Identify</h3>
-            <p className="muted">
-              Government problem identified.
+            <p
+              style={{
+                color: "#6b7280",
+                fontSize: "15px",
+                marginTop: "10px",
+              }}
+            >
+              Use pilot evidence to determine whether an innovation is ready
+              for wider deployment.
             </p>
           </div>
 
-          <div>
-            <h3>02 · Match</h3>
-            <p className="muted">
-              Relevant startups discovered.
-            </p>
+          <div
+            style={{
+              background: "#ecfdf5",
+              color: "#15803d",
+              padding: "10px 16px",
+              borderRadius: "20px",
+              fontSize: "12px",
+              fontWeight: 800,
+            }}
+          >
+            ● PILOT SUCCESSFUL
           </div>
-
-          <div>
-            <h3>03 · Evaluate</h3>
-            <p className="muted">
-              Transparent evaluation completed.
-            </p>
-          </div>
-
-          <div>
-            <h3>04 · Pilot</h3>
-            <p className="muted">
-              Controlled real-world testing.
-            </p>
-          </div>
-
-          <div>
-            <h3>05 · Prove</h3>
-            <p className="muted">
-              KPIs and evidence validated.
-            </p>
-          </div>
-
-          <div>
-            <h3>06 · Scale</h3>
-            <p className="muted">
-              Evidence-based scale recommendation.
-            </p>
-          </div>
-
         </div>
 
-      </div>
+        {/* Pilot summary */}
+        <section
+          style={{
+            background: "#111827",
+            color: "#ffffff",
+            borderRadius: "18px",
+            padding: "28px 30px",
+            marginBottom: "25px",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <div>
+            <div
+              style={{
+                fontSize: "11px",
+                color: "#a5b4fc",
+                fontWeight: 800,
+                letterSpacing: "1px",
+              }}
+            >
+              PILOT #CN-2026-014
+            </div>
 
+            <h2
+              style={{
+                fontSize: "24px",
+                margin: "8px 0 5px",
+              }}
+            >
+              GreenRoute AI
+            </h2>
+
+            <p
+              style={{
+                color: "#cbd5e1",
+                fontSize: "13px",
+                margin: 0,
+              }}
+            >
+              AI-powered waste collection optimization
+            </p>
+          </div>
+
+          <div style={{ textAlign: "right" }}>
+            <div
+              style={{
+                color: "#94a3b8",
+                fontSize: "11px",
+              }}
+            >
+              SCALE READINESS
+            </div>
+
+            <div
+              style={{
+                fontSize: "38px",
+                fontWeight: 800,
+                color: "#a5b4fc",
+                marginTop: "3px",
+              }}
+            >
+              92%
+            </div>
+          </div>
+        </section>
+
+        {/* KPI cards */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(4, 1fr)",
+            gap: "16px",
+            marginBottom: "25px",
+          }}
+        >
+          {kpis.map(([name, value, target, change]) => (
+            <div
+              key={name}
+              style={{
+                background: "#ffffff",
+                border: "1px solid #e5e7eb",
+                borderRadius: "16px",
+                padding: "20px",
+              }}
+            >
+              <div
+                style={{
+                  fontSize: "11px",
+                  color: "#6b7280",
+                  fontWeight: 700,
+                  lineHeight: 1.4,
+                }}
+              >
+                {name}
+              </div>
+
+              <div
+                style={{
+                  fontSize: "28px",
+                  fontWeight: 800,
+                  marginTop: "12px",
+                }}
+              >
+                {value}
+              </div>
+
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginTop: "7px",
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: "10px",
+                    color: "#9ca3af",
+                  }}
+                >
+                  {target}
+                </span>
+
+                <span
+                  style={{
+                    fontSize: "10px",
+                    fontWeight: 800,
+                    color: "#15803d",
+                  }}
+                >
+                  {change}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Main analytics */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1.25fr 0.75fr",
+            gap: "25px",
+          }}
+        >
+          {/* Evidence analysis */}
+          <section
+            style={{
+              background: "#ffffff",
+              border: "1px solid #e5e7eb",
+              borderRadius: "18px",
+              padding: "28px",
+            }}
+          >
+            <div
+              style={{
+                fontSize: "11px",
+                color: "#4f46e5",
+                fontWeight: 800,
+                letterSpacing: "1.5px",
+              }}
+            >
+              AI EVIDENCE ANALYSIS
+            </div>
+
+            <h2
+              style={{
+                fontSize: "22px",
+                margin: "10px 0 5px",
+              }}
+            >
+              Pilot Performance
+            </h2>
+
+            <p
+              style={{
+                color: "#6b7280",
+                fontSize: "13px",
+                marginBottom: "25px",
+              }}
+            >
+              Performance against agreed pilot success criteria.
+            </p>
+
+            {[
+              ["Technical Performance", 94],
+              ["Operational Impact", 91],
+              ["Cost Efficiency", 88],
+              ["User Acceptance", 93],
+            ].map(([label, score]) => (
+              <div key={label} style={{ marginBottom: "22px" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    fontSize: "12px",
+                    fontWeight: 700,
+                    marginBottom: "8px",
+                  }}
+                >
+                  <span>{label}</span>
+                  <span>{score}%</span>
+                </div>
+
+                <div
+                  style={{
+                    height: "9px",
+                    background: "#e5e7eb",
+                    borderRadius: "10px",
+                  }}
+                >
+                  <div
+                    style={{
+                      width: `${score}%`,
+                      height: "100%",
+                      background: "#4f46e5",
+                      borderRadius: "10px",
+                    }}
+                  />
+                </div>
+              </div>
+            ))}
+
+            <div
+              style={{
+                marginTop: "25px",
+                padding: "20px",
+                background: "#f8f7ff",
+                borderRadius: "13px",
+              }}
+            >
+              <div
+                style={{
+                  fontSize: "11px",
+                  color: "#4f46e5",
+                  fontWeight: 800,
+                  letterSpacing: "1px",
+                }}
+              >
+                AI INSIGHT
+              </div>
+
+              <p
+                style={{
+                  fontSize: "13px",
+                  lineHeight: 1.6,
+                  color: "#4b5563",
+                  marginBottom: 0,
+                }}
+              >
+                All primary pilot KPIs have exceeded their target thresholds.
+                Evidence indicates that the solution can be considered for
+                controlled scale-up.
+              </p>
+            </div>
+          </section>
+
+          {/* Scale decision */}
+          <section
+            style={{
+              background: "#ffffff",
+              border: "1px solid #e5e7eb",
+              borderRadius: "18px",
+              padding: "28px",
+            }}
+          >
+            <div
+              style={{
+                fontSize: "11px",
+                color: "#4f46e5",
+                fontWeight: 800,
+                letterSpacing: "1.5px",
+              }}
+            >
+              SCALE DECISION
+            </div>
+
+            <h2
+              style={{
+                fontSize: "23px",
+                margin: "10px 0",
+              }}
+            >
+              Ready for Scale
+            </h2>
+
+            <div
+              style={{
+                marginTop: "20px",
+                padding: "25px",
+                borderRadius: "15px",
+                background: "#ecfdf5",
+                border: "1px solid #bbf7d0",
+                textAlign: "center",
+              }}
+            >
+              <div
+                style={{
+                  fontSize: "42px",
+                  fontWeight: 800,
+                  color: "#15803d",
+                }}
+              >
+                4/4
+              </div>
+
+              <div
+                style={{
+                  fontSize: "12px",
+                  color: "#166534",
+                  fontWeight: 700,
+                }}
+              >
+                PRIMARY KPIs ACHIEVED
+              </div>
+            </div>
+
+            <div
+              style={{
+                marginTop: "22px",
+                padding: "18px",
+                background: "#f9fafb",
+                borderRadius: "12px",
+              }}
+            >
+              <div
+                style={{
+                  fontSize: "12px",
+                  fontWeight: 800,
+                  marginBottom: "10px",
+                }}
+              >
+                Recommended Action
+              </div>
+
+              <div
+                style={{
+                  fontSize: "22px",
+                  fontWeight: 800,
+                  color: "#15803d",
+                }}
+              >
+                SCALE
+              </div>
+
+              <p
+                style={{
+                  fontSize: "12px",
+                  color: "#6b7280",
+                  lineHeight: 1.5,
+                  marginBottom: 0,
+                }}
+              >
+                Expand deployment while maintaining KPI monitoring and
+                periodic governance reviews.
+              </p>
+            </div>
+
+            <button
+              style={{
+                width: "100%",
+                marginTop: "22px",
+                padding: "14px",
+                border: "none",
+                borderRadius: "9px",
+                background: "#111827",
+                color: "#ffffff",
+                fontWeight: 800,
+                cursor: "pointer",
+              }}
+            >
+              Recommend Scale-Up →
+            </button>
+
+            <p
+              style={{
+                textAlign: "center",
+                fontSize: "10px",
+                color: "#9ca3af",
+                marginTop: "12px",
+                lineHeight: 1.5,
+              }}
+            >
+              AI analyzes evidence. Government authorities make the final
+              procurement decision.
+            </p>
+          </section>
+        </div>
+      </div>
     </main>
   );
 }

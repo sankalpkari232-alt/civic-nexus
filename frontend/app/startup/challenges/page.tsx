@@ -1,181 +1,207 @@
-"use client";
-
-import { useState } from "react";
+import Link from "next/link";
 
 export default function StartupChallenges() {
-  const [applied, setApplied] = useState("");
-
-  const challenges = [
-    {
-      title: "Smart Municipal Waste Optimization",
-      department: "Municipal Corporation",
-      sector: "Urban Governance",
-      match: "94%",
-      deadline: "15 Sept 2026",
-      description:
-        "Develop an intelligent solution to optimize waste collection routes and improve fleet efficiency.",
-    },
-    {
-      title: "Predictive Flood Risk Monitoring",
-      department: "Disaster Management Department",
-      sector: "Disaster Management",
-      match: "82%",
-      deadline: "22 Sept 2026",
-      description:
-        "Develop a predictive system for identifying flood risks and improving early warning capabilities.",
-    },
-    {
-      title: "AI Public Transport Optimization",
-      department: "Urban Transport Authority",
-      sector: "Mobility",
-      match: "78%",
-      deadline: "30 Sept 2026",
-      description:
-        "Use data and AI to improve public transport routes, fleet utilization and passenger experience.",
-    },
-  ];
-
   return (
-    <main className="main">
+    <main
+      style={{
+        minHeight: "100vh",
+        background: "#f5f7fb",
+        fontFamily: "Arial, sans-serif",
+        color: "#172033",
+      }}
+    >
+      <header
+        style={{
+          height: "72px",
+          background: "#ffffff",
+          borderBottom: "1px solid #e5e7eb",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          padding: "0 40px",
+        }}
+      >
+        <Link
+          href="/"
+          style={{
+            fontSize: "21px",
+            fontWeight: 800,
+            textDecoration: "none",
+            color: "#111827",
+          }}
+        >
+          Civic Nexus
+        </Link>
 
-      <div className="section-title">
-        <div>
-          <div className="eyebrow">STARTUP OPPORTUNITIES</div>
-
-          <h1>Government Challenges</h1>
-
-          <p className="muted">
-            Discover innovation opportunities matched to your startup.
-          </p>
+        <div style={{ display: "flex", gap: "25px", fontSize: "14px" }}>
+          <Link href="/startup/dashboard">Dashboard</Link>
+          <Link href="/startup/challenges">Challenges</Link>
+          <Link href="/startup/applications">Applications</Link>
+          <Link href="/startup/pilots">Pilots</Link>
         </div>
-      </div>
+      </header>
 
-      <div className="card">
-
-        <div className="eyebrow">
-          AI-POWERED DISCOVERY
+      <section
+        style={{
+          maxWidth: "1200px",
+          margin: "0 auto",
+          padding: "55px 30px",
+        }}
+      >
+        <div
+          style={{
+            color: "#6366f1",
+            fontSize: "12px",
+            fontWeight: 800,
+            letterSpacing: "1.5px",
+            marginBottom: "10px",
+          }}
+        >
+          STARTUP OPPORTUNITIES
         </div>
 
-        <h2>Challenges recommended for you</h2>
+        <h1
+          style={{
+            fontSize: "38px",
+            margin: 0,
+            fontWeight: 800,
+          }}
+        >
+          Discover Government Challenges
+        </h1>
 
-        <p className="muted">
-          Civic Nexus ranks opportunities using your startup's
-          technology, sector, experience and eligibility profile.
+        <p
+          style={{
+            color: "#6b7280",
+            fontSize: "15px",
+            marginTop: "10px",
+            maxWidth: "650px",
+            lineHeight: 1.6,
+          }}
+        >
+          Find real public-sector problems where your startup's technology
+          can create measurable impact.
         </p>
 
-      </div>
-
-      <div style={{ marginTop: "20px" }}>
-
-        {challenges.map((challenge) => (
-
-          <div
-            className="card"
-            key={challenge.title}
-            style={{ marginBottom: "20px" }}
-          >
-
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: "20px",
+            marginTop: "35px",
+          }}
+        >
+          {[
+            [
+              "Smart Waste Collection",
+              "Municipal Corporation",
+              "CleanTech · AI",
+              "94%",
+            ],
+            [
+              "Citizen Grievance Automation",
+              "Urban Administration",
+              "GovTech · AI",
+              "89%",
+            ],
+            [
+              "Intelligent Traffic Management",
+              "Transport Department",
+              "Smart City · IoT",
+              "84%",
+            ],
+          ].map(([title, department, category, score]) => (
             <div
+              key={title}
               style={{
-                display: "flex",
-                justifyContent: "space-between",
-                gap: "20px",
+                background: "#ffffff",
+                border: "1px solid #e5e7eb",
+                borderRadius: "16px",
+                padding: "24px",
+                boxShadow: "0 5px 20px rgba(15,23,42,0.04)",
               }}
             >
-
-              <div>
-
-                <div className="eyebrow">
-                  {challenge.sector}
-                </div>
-
-                <h2>{challenge.title}</h2>
-
-                <p className="muted">
-                  {challenge.description}
-                </p>
-
-                <p>
-                  <b>Government:</b> {challenge.department}
-                </p>
-
-                <p className="muted">
-                  Application deadline: {challenge.deadline}
-                </p>
-
-              </div>
-
-              <div style={{ textAlign: "center", minWidth: "110px" }}>
-
-                <div className="stat">
-                  {challenge.match}
-                </div>
-
-                <small className="muted">
-                  AI MATCH
-                </small>
-
-              </div>
-
-            </div>
-
-            <div style={{ marginTop: "15px" }}>
-
-              <span className="badge">
-                ELIGIBILITY CHECKED
-              </span>
-
-              <span
-                className="badge"
-                style={{ marginLeft: "8px" }}
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
               >
-                PILOT OPPORTUNITY
-              </span>
+                <span
+                  style={{
+                    background: "#ecfdf5",
+                    color: "#15803d",
+                    padding: "6px 9px",
+                    borderRadius: "20px",
+                    fontSize: "10px",
+                    fontWeight: 800,
+                  }}
+                >
+                  AI MATCH
+                </span>
 
+                <strong
+                  style={{
+                    color: "#4f46e5",
+                    fontSize: "18px",
+                  }}
+                >
+                  {score}
+                </strong>
+              </div>
+
+              <h2
+                style={{
+                  fontSize: "18px",
+                  marginTop: "22px",
+                  marginBottom: "8px",
+                }}
+              >
+                {title}
+              </h2>
+
+              <p
+                style={{
+                  fontSize: "12px",
+                  color: "#6b7280",
+                }}
+              >
+                {department}
+              </p>
+
+              <p
+                style={{
+                  fontSize: "12px",
+                  color: "#4f46e5",
+                  fontWeight: 700,
+                  marginTop: "16px",
+                }}
+              >
+                {category}
+              </p>
+
+              <Link
+                href="/startup/applications"
+                style={{
+                  display: "block",
+                  marginTop: "20px",
+                  background: "#111827",
+                  color: "#ffffff",
+                  padding: "11px",
+                  borderRadius: "8px",
+                  textAlign: "center",
+                  textDecoration: "none",
+                  fontSize: "12px",
+                  fontWeight: 700,
+                }}
+              >
+                View Challenge →
+              </Link>
             </div>
-
-            <button
-              className="btn"
-              style={{ marginTop: "20px" }}
-              onClick={() => setApplied(challenge.title)}
-            >
-              Apply for Challenge →
-            </button>
-
-          </div>
-
-        ))}
-
-      </div>
-
-      {applied && (
-
-        <div className="card" style={{ marginTop: "20px" }}>
-
-          <div className="eyebrow">
-            APPLICATION STARTED
-          </div>
-
-          <h2>✓ {applied}</h2>
-
-          <p className="muted">
-            Your application draft has been created.
-            You can now submit your proposal and supporting documents.
-          </p>
-
-          <button
-            className="btn"
-            onClick={() =>
-              alert("Application submitted successfully!")
-            }
-          >
-            Submit Application →
-          </button>
-
+          ))}
         </div>
-
-      )}
-
+      </section>
     </main>
   );
 }

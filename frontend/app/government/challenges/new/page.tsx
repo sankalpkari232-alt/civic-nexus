@@ -1,138 +1,315 @@
-"use client";
-
-import { useState } from "react";
-
 export default function NewChallenge() {
-  const [problem, setProblem] = useState("");
-  const [generated, setGenerated] = useState(false);
-
-  function generateChallenge() {
-    if (!problem.trim()) return;
-    setGenerated(true);
-  }
+  const steps = [
+    ["01", "Define the Problem", "Describe the public-sector problem and the outcome you want to achieve."],
+    ["02", "Set Requirements", "Add eligibility, budget, timeline and measurable success criteria."],
+    ["03", "AI Structure", "Civic Nexus converts the problem into a clear innovation challenge."],
+  ];
 
   return (
-    <main className="main">
+    <main
+      style={{
+        minHeight: "100vh",
+        background: "#f5f7fb",
+        color: "#172033",
+        fontFamily: "Arial, sans-serif",
+        padding: "40px",
+      }}
+    >
+      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
 
-      <div className="section-title">
-        <div>
-          <div className="eyebrow">AI-POWERED PROCUREMENT</div>
-          <h1>Create Government Challenge</h1>
-          <p className="muted">
-            Convert a government problem into a measurable innovation challenge.
-          </p>
-        </div>
-      </div>
-
-      <div className="card">
-
-        <div className="eyebrow">STEP 01</div>
-        <h2>Describe the problem</h2>
-
-        <p className="muted">
-          Describe the problem in simple language. Civic Nexus will structure
-          it into an outcome-based challenge.
-        </p>
-
-        <textarea
-          value={problem}
-          onChange={(e) => setProblem(e.target.value)}
-          placeholder="Example: Our city wants to reduce waste collection delays and improve vehicle route efficiency."
+        <div
           style={{
-            width: "100%",
-            minHeight: "140px",
-            padding: "16px",
-            marginTop: "15px",
-            borderRadius: "10px",
-            border: "1px solid #ddd",
-            fontSize: "16px",
-            resize: "vertical",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginBottom: "45px",
           }}
-        />
-
-        <button
-          className="btn"
-          onClick={generateChallenge}
-          style={{ marginTop: "16px" }}
         >
-          ✦ Generate Challenge with AI
-        </button>
-
-      </div>
-
-      {generated && (
-        <div className="card" style={{ marginTop: "20px" }}>
-
-          <div className="eyebrow">AI GENERATED CHALLENGE</div>
-
-          <h2>Smart Municipal Waste Optimization</h2>
-
-          <p className="muted">
-            Develop an intelligent solution to optimize municipal waste
-            collection routes, reduce delays and improve operational efficiency.
-          </p>
-
-          <div className="grid3" style={{ marginTop: "20px" }}>
-
-            <div className="card">
-              <div className="eyebrow">OBJECTIVE</div>
-              <h3>Improve Collection Efficiency</h3>
-              <p className="muted">
-                Optimize vehicle routes and reduce unnecessary travel.
-              </p>
-            </div>
-
-            <div className="card">
-              <div className="eyebrow">PILOT DURATION</div>
-              <h3>8 Weeks</h3>
-              <p className="muted">
-                Controlled pilot with defined milestones.
-              </p>
-            </div>
-
-            <div className="card">
-              <div className="eyebrow">SECTOR</div>
-              <h3>Urban Governance</h3>
-              <p className="muted">
-                Municipal waste management.
-              </p>
-            </div>
-
-          </div>
-
-          <h3 style={{ marginTop: "30px" }}>Suggested KPIs</h3>
-
-          <div className="grid3">
-
-            <div className="card">
-              <h3>20%</h3>
-              <p className="muted">Reduction in fuel usage</p>
-            </div>
-
-            <div className="card">
-              <h3>30%</h3>
-              <p className="muted">Reduction in missed collections</p>
-            </div>
-
-            <div className="card">
-              <h3>15%</h3>
-              <p className="muted">Improvement in route efficiency</p>
-            </div>
-
-          </div>
-
-          <div style={{ marginTop: "25px" }}>
-            <button
-              className="btn"
-              onClick={() => alert("Challenge published successfully!")}
+          <div>
+            <div
+              style={{
+                fontSize: "12px",
+                fontWeight: 800,
+                letterSpacing: "2px",
+                color: "#4f46e5",
+                marginBottom: "8px",
+              }}
             >
-              Publish Challenge →
-            </button>
+              GOVERNMENT PORTAL
+            </div>
+
+            <h1 style={{ fontSize: "38px", margin: 0 }}>
+              Create Government Challenge
+            </h1>
+
+            <p
+              style={{
+                color: "#6b7280",
+                marginTop: "10px",
+                fontSize: "15px",
+              }}
+            >
+              Turn a public-sector problem into a measurable innovation opportunity.
+            </p>
           </div>
+
+          <div
+            style={{
+              background: "#ffffff",
+              padding: "12px 18px",
+              borderRadius: "10px",
+              border: "1px solid #e5e7eb",
+              fontSize: "13px",
+              fontWeight: 700,
+            }}
+          >
+            Draft Challenge
+          </div>
+        </div>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1.5fr 1fr",
+            gap: "25px",
+          }}
+        >
+
+          <section
+            style={{
+              background: "#ffffff",
+              borderRadius: "18px",
+              padding: "30px",
+              border: "1px solid #e5e7eb",
+              boxShadow: "0 8px 30px rgba(15,23,42,0.05)",
+            }}
+          >
+            <h2 style={{ marginTop: 0, fontSize: "22px" }}>
+              Challenge Information
+            </h2>
+
+            <label
+              style={{
+                display: "block",
+                fontSize: "13px",
+                fontWeight: 700,
+                marginTop: "25px",
+                marginBottom: "8px",
+              }}
+            >
+              Challenge Title
+            </label>
+
+            <input
+              placeholder="e.g. Smart Waste Collection"
+              style={{
+                width: "100%",
+                boxSizing: "border-box",
+                padding: "14px",
+                borderRadius: "9px",
+                border: "1px solid #d1d5db",
+                fontSize: "14px",
+              }}
+            />
+
+            <label
+              style={{
+                display: "block",
+                fontSize: "13px",
+                fontWeight: 700,
+                marginTop: "22px",
+                marginBottom: "8px",
+              }}
+            >
+              Problem Statement
+            </label>
+
+            <textarea
+              placeholder="Describe the problem your department wants startups to solve..."
+              rows={6}
+              style={{
+                width: "100%",
+                boxSizing: "border-box",
+                padding: "14px",
+                borderRadius: "9px",
+                border: "1px solid #d1d5db",
+                fontSize: "14px",
+                resize: "vertical",
+              }}
+            />
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr",
+                gap: "15px",
+                marginTop: "20px",
+              }}
+            >
+              <div>
+                <label
+                  style={{
+                    display: "block",
+                    fontSize: "13px",
+                    fontWeight: 700,
+                    marginBottom: "8px",
+                  }}
+                >
+                  Department
+                </label>
+
+                <input
+                  placeholder="Municipal Corporation"
+                  style={{
+                    width: "100%",
+                    boxSizing: "border-box",
+                    padding: "13px",
+                    borderRadius: "9px",
+                    border: "1px solid #d1d5db",
+                  }}
+                />
+              </div>
+
+              <div>
+                <label
+                  style={{
+                    display: "block",
+                    fontSize: "13px",
+                    fontWeight: 700,
+                    marginBottom: "8px",
+                  }}
+                >
+                  Estimated Budget
+                </label>
+
+                <input
+                  placeholder="₹10,00,000"
+                  style={{
+                    width: "100%",
+                    boxSizing: "border-box",
+                    padding: "13px",
+                    borderRadius: "9px",
+                    border: "1px solid #d1d5db",
+                  }}
+                />
+              </div>
+            </div>
+
+            <button
+              style={{
+                marginTop: "28px",
+                width: "100%",
+                padding: "15px",
+                border: "none",
+                borderRadius: "10px",
+                background: "#4f46e5",
+                color: "#ffffff",
+                fontSize: "14px",
+                fontWeight: 800,
+                cursor: "pointer",
+              }}
+            >
+              Generate Challenge with AI →
+            </button>
+          </section>
+
+          <section
+            style={{
+              background: "#111827",
+              color: "#ffffff",
+              borderRadius: "18px",
+              padding: "30px",
+            }}
+          >
+            <div
+              style={{
+                fontSize: "11px",
+                fontWeight: 800,
+                letterSpacing: "1.5px",
+                color: "#a5b4fc",
+              }}
+            >
+              CIVIC NEXUS WORKFLOW
+            </div>
+
+            <h2 style={{ fontSize: "24px", marginTop: "12px" }}>
+              From Problem to Innovation
+            </h2>
+
+            <p
+              style={{
+                color: "#cbd5e1",
+                fontSize: "13px",
+                lineHeight: 1.6,
+              }}
+            >
+              Create structured challenges that startups can understand,
+              evaluate and respond to.
+            </p>
+
+            <div style={{ marginTop: "30px" }}>
+              {steps.map(([number, title, description]) => (
+                <div
+                  key={number}
+                  style={{
+                    display: "flex",
+                    gap: "15px",
+                    marginBottom: "25px",
+                  }}
+                >
+                  <div
+                    style={{
+                      minWidth: "38px",
+                      height: "38px",
+                      borderRadius: "50%",
+                      background: "#4f46e5",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: "11px",
+                      fontWeight: 800,
+                    }}
+                  >
+                    {number}
+                  </div>
+
+                  <div>
+                    <div style={{ fontWeight: 800, fontSize: "14px" }}>
+                      {title}
+                    </div>
+
+                    <div
+                      style={{
+                        color: "#94a3b8",
+                        fontSize: "12px",
+                        lineHeight: 1.5,
+                        marginTop: "5px",
+                      }}
+                    >
+                      {description}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div
+              style={{
+                marginTop: "20px",
+                padding: "16px",
+                borderRadius: "12px",
+                background: "#1e293b",
+                fontSize: "12px",
+                color: "#cbd5e1",
+              }}
+            >
+              ✦ AI assists with structuring and matching — final decisions
+              remain under government control.
+            </div>
+          </section>
 
         </div>
-      )}
-
+      </div>
     </main>
   );
 }

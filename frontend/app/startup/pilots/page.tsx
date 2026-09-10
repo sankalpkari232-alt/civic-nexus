@@ -2,318 +2,496 @@
 
 import { useState } from "react";
 
-export default function StartupPilotsPage() {
-  const [uploaded, setUploaded] = useState(false);
+const milestones = [
+  ["Baseline Assessment", "Completed", "100%"],
+  ["AI Route Deployment", "Completed", "100%"],
+  ["Live Pilot Monitoring", "In Progress", "65%"],
+  ["Government Pilot Review", "Upcoming", "0%"],
+];
+
+export default function StartupPilots() {
+  const [evidence, setEvidence] = useState(false);
 
   return (
-    <main className="min-h-screen bg-slate-50 p-8">
-      <div className="mx-auto max-w-6xl">
+    <main
+      style={{
+        minHeight: "100vh",
+        background: "#f5f7fb",
+        color: "#172033",
+        padding: "42px 50px",
+      }}
+    >
+      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+            marginBottom: 30,
+          }}
+        >
+          <div>
+            <div
+              style={{
+                fontSize: 13,
+                color: "#635bff",
+                fontWeight: 800,
+                textTransform: "uppercase",
+                letterSpacing: 1.2,
+              }}
+            >
+              Startup Portal
+            </div>
 
-        {/* Header */}
-        <div className="mb-8">
-          <p className="text-sm font-semibold text-blue-600">
-            CIVIC NEXUS • STARTUP PORTAL
-          </p>
+            <h1
+              style={{
+                fontSize: 34,
+                margin: "8px 0 8px",
+                fontWeight: 800,
+              }}
+            >
+              Active Pilot
+            </h1>
 
-          <h1 className="mt-2 text-3xl font-bold text-slate-900">
-            Pilot Tracking
-          </h1>
+            <p style={{ margin: 0, color: "#687386", fontSize: 16 }}>
+              Monitor your government pilot and demonstrate real-world impact.
+            </p>
+          </div>
 
-          <p className="mt-2 text-slate-500">
-            Monitor pilot progress, KPIs, milestones and evidence in one place.
-          </p>
+          <div
+            style={{
+              background: "#ecfdf3",
+              color: "#15803d",
+              padding: "9px 15px",
+              borderRadius: 999,
+              fontSize: 13,
+              fontWeight: 800,
+            }}
+          >
+            ● PILOT ACTIVE
+          </div>
         </div>
 
-        {/* Pilot Header */}
-        <div className="rounded-2xl bg-white border shadow-sm p-6">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-5">
-
+        <section
+          style={{
+            background: "#fff",
+            border: "1px solid #e6e9ef",
+            borderRadius: 18,
+            padding: 28,
+            boxShadow: "0 6px 18px rgba(20,30,50,0.04)",
+            marginBottom: 22,
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              gap: 20,
+              flexWrap: "wrap",
+            }}
+          >
             <div>
-              <div className="flex flex-wrap items-center gap-3">
-                <h2 className="text-2xl font-bold text-slate-900">
-                  Smart Municipal Waste Optimization
-                </h2>
-
-                <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-700">
-                  ACTIVE
-                </span>
+              <div
+                style={{
+                  color: "#8a93a3",
+                  fontSize: 12,
+                  fontWeight: 700,
+                }}
+              >
+                PILOT #CN-2026-014
               </div>
 
-              <p className="mt-2 text-slate-500">
-                Pilot #CN-2026-014 • Municipal Corporation
-              </p>
-            </div>
-
-            <div className="text-right">
-              <p className="text-sm text-slate-500">
-                Pilot Progress
-              </p>
-
-              <p className="text-3xl font-bold text-blue-600">
-                75%
-              </p>
-
-              <p className="text-xs text-slate-400">
-                Week 6 of 8
-              </p>
-            </div>
-
-          </div>
-
-          {/* Progress bar */}
-          <div className="mt-6">
-            <div className="h-3 rounded-full bg-slate-100 overflow-hidden">
-              <div className="h-full w-3/4 rounded-full bg-blue-600"></div>
-            </div>
-          </div>
-        </div>
-
-        {/* Milestones */}
-        <div className="mt-6 rounded-2xl bg-white border shadow-sm p-6">
-
-          <h2 className="text-xl font-bold text-slate-900">
-            Pilot Milestones
-          </h2>
-
-          <div className="mt-6 grid md:grid-cols-4 gap-4">
-
-            <div className="rounded-xl border border-green-200 bg-green-50 p-5">
-              <div className="text-xl">✓</div>
-              <p className="mt-3 font-semibold text-green-800">
-                Baseline
-              </p>
-              <p className="mt-1 text-xs text-green-700">
-                Completed
-              </p>
-            </div>
-
-            <div className="rounded-xl border border-green-200 bg-green-50 p-5">
-              <div className="text-xl">✓</div>
-              <p className="mt-3 font-semibold text-green-800">
-                Prototype
-              </p>
-              <p className="mt-1 text-xs text-green-700">
-                Completed
-              </p>
-            </div>
-
-            <div className="rounded-xl border border-blue-200 bg-blue-50 p-5">
-              <div className="text-xl">→</div>
-              <p className="mt-3 font-semibold text-blue-800">
-                Field Trial
-              </p>
-              <p className="mt-1 text-xs text-blue-700">
-                In Progress
-              </p>
-            </div>
-
-            <div className="rounded-xl border bg-slate-50 p-5">
-              <div className="text-xl text-slate-400">○</div>
-              <p className="mt-3 font-semibold text-slate-700">
-                Validation
-              </p>
-              <p className="mt-1 text-xs text-slate-500">
-                Upcoming
-              </p>
-            </div>
-
-          </div>
-        </div>
-
-        {/* KPI Monitoring */}
-        <div className="mt-6 rounded-2xl bg-white border shadow-sm p-6">
-
-          <div className="flex items-center justify-between">
-            <div>
-              <h2 className="text-xl font-bold text-slate-900">
-                KPI Monitoring
+              <h2
+                style={{
+                  fontSize: 25,
+                  margin: "7px 0",
+                }}
+              >
+                GreenRoute AI × Municipal Waste Department
               </h2>
 
-              <p className="mt-1 text-sm text-slate-500">
-                Live pilot performance against agreed targets
+              <p
+                style={{
+                  margin: 0,
+                  color: "#687386",
+                  fontSize: 14,
+                }}
+              >
+                AI-powered waste collection route optimization
               </p>
             </div>
 
-            <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-700">
-              4 / 4 On Track
-            </span>
+            <div style={{ minWidth: 190 }}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  fontSize: 13,
+                  marginBottom: 8,
+                }}
+              >
+                <span style={{ color: "#778196" }}>Pilot Progress</span>
+                <strong>62%</strong>
+              </div>
+
+              <div
+                style={{
+                  height: 9,
+                  background: "#e8eaf0",
+                  borderRadius: 20,
+                }}
+              >
+                <div
+                  style={{
+                    width: "62%",
+                    height: "100%",
+                    background: "#635bff",
+                    borderRadius: 20,
+                  }}
+                />
+              </div>
+
+              <div
+                style={{
+                  marginTop: 7,
+                  fontSize: 12,
+                  color: "#8a93a3",
+                }}
+              >
+                Week 5 of 8
+              </div>
+            </div>
           </div>
+        </section>
 
-          <div className="mt-6 space-y-5">
-
-            <div>
-              <div className="flex justify-between text-sm mb-2">
-                <span className="font-medium">
-                  Fuel Usage Reduction
-                </span>
-
-                <span className="font-semibold text-green-600">
-                  76% of target
-                </span>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: 18,
+            marginBottom: 22,
+          }}
+        >
+          {[
+            ["Collection Efficiency", "87%", "+18%", "#16a34a"],
+            ["Fuel Consumption", "72%", "-14%", "#0891b2"],
+            ["Missed Collections", "8%", "-32%", "#16a34a"],
+          ].map(([title, value, change, color]) => (
+            <div
+              key={title}
+              style={{
+                background: "#fff",
+                border: "1px solid #e6e9ef",
+                borderRadius: 16,
+                padding: 22,
+                boxShadow: "0 6px 18px rgba(20,30,50,0.04)",
+              }}
+            >
+              <div style={{ color: "#778196", fontSize: 13 }}>
+                {title}
               </div>
 
-              <div className="h-3 bg-slate-100 rounded-full">
-                <div className="h-full w-[76%] bg-green-500 rounded-full"></div>
+              <div
+                style={{
+                  fontSize: 30,
+                  fontWeight: 850,
+                  marginTop: 9,
+                }}
+              >
+                {value}
               </div>
 
-              <p className="mt-1 text-xs text-slate-400">
-                Target: ≤ 80%
-              </p>
+              <div
+                style={{
+                  color,
+                  fontSize: 13,
+                  fontWeight: 750,
+                  marginTop: 5,
+                }}
+              >
+                {change} vs baseline
+              </div>
             </div>
-
-            <div>
-              <div className="flex justify-between text-sm mb-2">
-                <span className="font-medium">
-                  Missed Collections
-                </span>
-
-                <span className="font-semibold text-green-600">
-                  11%
-                </span>
-              </div>
-
-              <div className="h-3 bg-slate-100 rounded-full">
-                <div className="h-full w-[70%] bg-green-500 rounded-full"></div>
-              </div>
-
-              <p className="mt-1 text-xs text-slate-400">
-                Target: ≤ 12%
-              </p>
-            </div>
-
-            <div>
-              <div className="flex justify-between text-sm mb-2">
-                <span className="font-medium">
-                  Route Efficiency
-                </span>
-
-                <span className="font-semibold text-green-600">
-                  81%
-                </span>
-              </div>
-
-              <div className="h-3 bg-slate-100 rounded-full">
-                <div className="h-full w-[81%] bg-green-500 rounded-full"></div>
-              </div>
-
-              <p className="mt-1 text-xs text-slate-400">
-                Target: ≥ 77%
-              </p>
-            </div>
-
-          </div>
+          ))}
         </div>
 
-        {/* Evidence */}
-        <div className="mt-6 rounded-2xl bg-white border shadow-sm p-6">
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1.2fr 0.8fr",
+            gap: 22,
+          }}
+        >
+          <section
+            style={{
+              background: "#fff",
+              border: "1px solid #e6e9ef",
+              borderRadius: 18,
+              padding: 26,
+              boxShadow: "0 6px 18px rgba(20,30,50,0.04)",
+            }}
+          >
+            <h2 style={{ margin: 0, fontSize: 19 }}>
+              Pilot Milestones
+            </h2>
 
-          <h2 className="text-xl font-bold text-slate-900">
-            Evidence & Documentation
-          </h2>
+            <p
+              style={{
+                color: "#778196",
+                fontSize: 13,
+                marginTop: 7,
+              }}
+            >
+              Track implementation progress and government checkpoints.
+            </p>
 
-          <p className="mt-2 text-sm text-slate-500">
-            Upload pilot evidence for government evaluation and independent validation.
-          </p>
+            <div style={{ marginTop: 22 }}>
+              {milestones.map(([name, status, progress], index) => (
+                <div
+                  key={name}
+                  style={{
+                    display: "flex",
+                    gap: 16,
+                    padding: "17px 0",
+                    borderBottom:
+                      index === milestones.length - 1
+                        ? "none"
+                        : "1px solid #edf0f4",
+                  }}
+                >
+                  <div
+                    style={{
+                      width: 34,
+                      height: 34,
+                      borderRadius: "50%",
+                      background:
+                        status === "Completed"
+                          ? "#dcfce7"
+                          : status === "In Progress"
+                          ? "#ede9fe"
+                          : "#f1f5f9",
+                      color:
+                        status === "Completed"
+                          ? "#15803d"
+                          : status === "In Progress"
+                          ? "#635bff"
+                          : "#64748b",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontWeight: 800,
+                      flexShrink: 0,
+                    }}
+                  >
+                    {status === "Completed"
+                      ? "✓"
+                      : status === "In Progress"
+                      ? "→"
+                      : "○"}
+                  </div>
 
-          <div className="mt-5 flex flex-wrap gap-3">
+                  <div style={{ flex: 1 }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <strong style={{ fontSize: 14 }}>{name}</strong>
+
+                      <span
+                        style={{
+                          fontSize: 12,
+                          color:
+                            status === "Completed"
+                              ? "#15803d"
+                              : status === "In Progress"
+                              ? "#635bff"
+                              : "#64748b",
+                          fontWeight: 700,
+                        }}
+                      >
+                        {status}
+                      </span>
+                    </div>
+
+                    <div
+                      style={{
+                        marginTop: 9,
+                        height: 6,
+                        background: "#edf0f4",
+                        borderRadius: 20,
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: progress,
+                          height: "100%",
+                          background:
+                            status === "Completed"
+                              ? "#22c55e"
+                              : "#635bff",
+                          borderRadius: 20,
+                        }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section
+            style={{
+              background: "#fff",
+              border: "1px solid #e6e9ef",
+              borderRadius: 18,
+              padding: 26,
+              boxShadow: "0 6px 18px rgba(20,30,50,0.04)",
+              height: "fit-content",
+            }}
+          >
+            <h2 style={{ margin: 0, fontSize: 19 }}>
+              Pilot Information
+            </h2>
+
+            <div style={{ marginTop: 18 }}>
+              {[
+                ["Government Department", "Municipal Waste Department"],
+                ["Pilot Budget", "₹10,00,000"],
+                ["Duration", "8 Weeks"],
+                ["Current Week", "Week 5"],
+                ["Evidence Collected", "18 Items"],
+                ["Next Review", "Week 6"],
+              ].map(([label, value]) => (
+                <div
+                  key={label}
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    gap: 15,
+                    padding: "12px 0",
+                    borderBottom: "1px solid #edf0f4",
+                    fontSize: 13,
+                  }}
+                >
+                  <span style={{ color: "#778196" }}>{label}</span>
+                  <strong style={{ textAlign: "right" }}>{value}</strong>
+                </div>
+              ))}
+            </div>
 
             <button
-              onClick={() => setUploaded(true)}
-              className="rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800"
+              onClick={() => setEvidence(!evidence)}
+              style={{
+                width: "100%",
+                marginTop: 20,
+                padding: "12px 15px",
+                border: "none",
+                borderRadius: 10,
+                background: "#635bff",
+                color: "#fff",
+                fontWeight: 750,
+                cursor: "pointer",
+              }}
             >
-              Upload Evidence
+              {evidence ? "Evidence Submitted ✓" : "Submit Pilot Evidence"}
             </button>
 
-            <button
-              onClick={() => alert("Evidence Pack opened")}
-              className="rounded-xl border px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50"
+            {evidence && (
+              <div
+                style={{
+                  marginTop: 12,
+                  padding: 13,
+                  borderRadius: 10,
+                  background: "#ecfdf3",
+                  color: "#166534",
+                  fontSize: 12,
+                }}
+              >
+                Evidence package submitted successfully for government
+                review.
+              </div>
+            )}
+          </section>
+        </div>
+
+        <section
+          style={{
+            marginTop: 22,
+            background: "linear-gradient(135deg, #171b35, #29245a)",
+            color: "#fff",
+            borderRadius: 18,
+            padding: 28,
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              gap: 20,
+              flexWrap: "wrap",
+            }}
+          >
+            <div>
+              <div
+                style={{
+                  color: "#b8b3ff",
+                  fontSize: 12,
+                  fontWeight: 800,
+                  textTransform: "uppercase",
+                  letterSpacing: 1,
+                }}
+              >
+                Scale Opportunity
+              </div>
+
+              <h2
+                style={{
+                  margin: "8px 0 6px",
+                  fontSize: 22,
+                }}
+              >
+                Demonstrate impact. Prepare for scale.
+              </h2>
+
+              <p
+                style={{
+                  margin: 0,
+                  color: "#c7cad9",
+                  fontSize: 14,
+                }}
+              >
+                Strong pilot results can unlock wider government deployment.
+              </p>
+            </div>
+
+            <div
+              style={{
+                background: "rgba(255,255,255,0.1)",
+                border: "1px solid rgba(255,255,255,0.15)",
+                borderRadius: 14,
+                padding: "15px 22px",
+                textAlign: "center",
+              }}
             >
-              View Evidence Pack
-            </button>
+              <div style={{ fontSize: 12, color: "#c7cad9" }}>
+                Current Readiness
+              </div>
 
+              <div
+                style={{
+                  fontSize: 28,
+                  fontWeight: 850,
+                  marginTop: 3,
+                }}
+              >
+                92%
+              </div>
+            </div>
           </div>
-
-          {uploaded && (
-            <div className="mt-5 rounded-xl border border-green-200 bg-green-50 p-4">
-              <p className="font-semibold text-green-800">
-                Evidence uploaded successfully
-              </p>
-
-              <p className="mt-1 text-sm text-green-700">
-                Demo file added to Pilot #CN-2026-014 evidence pack.
-              </p>
-            </div>
-          )}
-
-        </div>
-
-        {/* Payment */}
-        <div className="mt-6 rounded-2xl bg-white border shadow-sm p-6">
-
-          <h2 className="text-xl font-bold text-slate-900">
-            Milestone Payments
-          </h2>
-
-          <div className="mt-5 grid md:grid-cols-3 gap-4">
-
-            <div className="rounded-xl border p-5">
-              <p className="text-sm text-slate-500">
-                Milestone 1
-              </p>
-              <p className="mt-2 text-xl font-bold">
-                ₹2,00,000
-              </p>
-              <span className="text-xs text-green-600 font-semibold">
-                Paid
-              </span>
-            </div>
-
-            <div className="rounded-xl border p-5">
-              <p className="text-sm text-slate-500">
-                Milestone 2
-              </p>
-              <p className="mt-2 text-xl font-bold">
-                ₹3,00,000
-              </p>
-              <span className="text-xs text-green-600 font-semibold">
-                Paid
-              </span>
-            </div>
-
-            <div className="rounded-xl border p-5">
-              <p className="text-sm text-slate-500">
-                Final Milestone
-              </p>
-              <p className="mt-2 text-xl font-bold">
-                ₹5,00,000
-              </p>
-              <span className="text-xs text-amber-600 font-semibold">
-                Pending Validation
-              </span>
-            </div>
-
-          </div>
-        </div>
-
-        {/* Scale readiness */}
-        <div className="mt-6 rounded-2xl bg-slate-900 p-6 text-white">
-
-          <p className="text-sm font-semibold text-blue-300">
-            NEXT STEP
-          </p>
-
-          <h2 className="mt-2 text-2xl font-bold">
-            Pilot Validation → Scale Decision
-          </h2>
-
-          <p className="mt-2 max-w-2xl text-sm text-slate-300">
-            Once the pilot completes, Civic Nexus evaluates KPI performance,
-            evidence and validation results to generate a transparent
-            scale-up recommendation.
-          </p>
-
-        </div>
-
+        </section>
       </div>
     </main>
   );

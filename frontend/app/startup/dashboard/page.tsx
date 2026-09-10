@@ -1,397 +1,278 @@
-"use client";
-
-import Sidebar from "@/components/Sidebar";
 import Link from "next/link";
+import styles from "./dashboard.module.css";
+
+const stats = [
+  ["07", "Open Applications", "+2 this month"],
+  ["14", "AI Matches", "+18% this month"],
+  ["02", "Active Pilots", "Both on track"],
+  ["03", "New Opportunities", "This week"],
+];
+
+const pipeline = [
+  ["01", "Discover", "18"],
+  ["02", "Apply", "07"],
+  ["03", "Evaluate", "04"],
+  ["04", "Pilot", "02"],
+  ["05", "Scale", "01"],
+];
+
+const applications = [
+  [
+    "Smart Waste Collection & Route Optimization",
+    "Municipal Waste Department",
+    "Pilot Active",
+    76,
+  ],
+  [
+    "AI-Based Citizen Grievance Classification",
+    "Urban Administration",
+    "Under Evaluation",
+    52,
+  ],
+  [
+    "Intelligent Traffic Flow Management",
+    "Transport Department",
+    "Application Submitted",
+    31,
+  ],
+];
+
+const opportunities = [
+  ["Urban Waste Intelligence", "Municipal Corporation", "94% Match"],
+  ["Citizen Service Automation", "Urban Administration", "89% Match"],
+  ["Smart Traffic Analytics", "Transport Department", "84% Match"],
+  ["AI Public Safety Monitoring", "City Operations", "81% Match"],
+];
 
 export default function StartupDashboard() {
   return (
-    <div className="sidebar-layout">
-      <Sidebar startup />
+    <div className={styles.page}>
 
-      <main className="main">
+      <aside className={styles.sidebar}>
+        <div className={styles.logo}>Civic Nexus</div>
 
-        {/* HEADER */}
-        <div className="section-title">
-          <div>
-            <div className="eyebrow">STARTUP PORTAL</div>
-
-            <h1>Welcome, GreenRoute AI</h1>
-
-            <p className="muted">
-              Discover government challenges, apply for pilots and track your
-              innovation journey.
-            </p>
-          </div>
+        <div className={styles.subtitle}>
+          Government Innovation OS
         </div>
 
-        {/* PROFILE */}
-        <div className="card">
-          <div className="eyebrow">STARTUP PROFILE</div>
+        <div className={styles.portal}>
+          Startup Portal
+        </div>
 
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              gap: "20px",
-              flexWrap: "wrap",
-              marginTop: "12px",
-            }}
-          >
+        <nav className={styles.nav}>
+          <Link href="/startup/dashboard">
+            Dashboard
+          </Link>
+
+          <Link href="/startup/challenges">
+            Discover Challenges
+          </Link>
+
+          <Link href="/startup/applications">
+            My Applications
+          </Link>
+
+          <Link href="/startup/pilots">
+            Active Pilots
+          </Link>
+        </nav>
+
+        <div className={styles.back}>
+          <Link href="/">
+            ← Back to Home
+          </Link>
+        </div>
+      </aside>
+
+      <main className={styles.main}>
+
+        <header className={styles.header}>
+          <div>
+            <div className={styles.headerSmall}>
+              Startup Portal
+            </div>
+
+            <div className={styles.headerTitle}>
+              Innovation Workspace
+            </div>
+          </div>
+
+          <div className={styles.profile}>
             <div>
-              <h2>GreenRoute AI</h2>
+              <div className={styles.profileName}>
+                GreenRoute AI
+              </div>
 
-              <p className="muted">
-                AI-powered urban mobility and route optimization
-              </p>
+              <div className={styles.profileRole}>
+                Startup Account
+              </div>
+            </div>
 
-              <p className="muted">
-                Stage: Pilot Ready • Location: Indore, Madhya Pradesh
+            <div className={styles.avatar}>
+              G
+            </div>
+          </div>
+        </header>
+
+        <div className={styles.content}>
+
+          <div className={styles.headingRow}>
+            <div>
+              <div className={styles.eyebrow}>
+                Startup Workspace
+              </div>
+
+              <h1 className={styles.heading}>
+                Find problems worth solving.
+              </h1>
+
+              <p className={styles.description}>
+                Discover government challenges, apply with your solution,
+                and move from evaluation to pilot and scale.
               </p>
             </div>
 
-            <span
-              style={{
-                background: "#dcfce7",
-                color: "#166534",
-                padding: "8px 14px",
-                borderRadius: "999px",
-                fontWeight: 600,
-                fontSize: "13px",
-              }}
-            >
-              VERIFIED STARTUP
-            </span>
-          </div>
-        </div>
-
-        {/* STATS */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns:
-              "repeat(auto-fit, minmax(180px, 1fr))",
-            gap: "16px",
-            marginTop: "20px",
-          }}
-        >
-          <div className="card">
-            <div className="eyebrow">MATCHED</div>
-            <h2 style={{ marginTop: "8px" }}>12</h2>
-            <p className="muted">Government challenges</p>
-          </div>
-
-          <div className="card">
-            <div className="eyebrow">APPLICATIONS</div>
-            <h2 style={{ marginTop: "8px" }}>4</h2>
-            <p className="muted">Submitted applications</p>
-          </div>
-
-          <div className="card">
-            <div className="eyebrow">PILOTS</div>
-            <h2 style={{ marginTop: "8px" }}>1</h2>
-            <p className="muted">Active pilot</p>
-          </div>
-
-          <div className="card">
-            <div className="eyebrow">SUCCESS SCORE</div>
-            <h2 style={{ marginTop: "8px" }}>82%</h2>
-            <p className="muted">Current readiness</p>
-          </div>
-        </div>
-
-        {/* QUICK ACTIONS */}
-        <div className="card" style={{ marginTop: "20px" }}>
-          <div className="eyebrow">QUICK ACTIONS</div>
-
-          <h2 style={{ marginTop: "8px" }}>
-            Continue your innovation journey
-          </h2>
-
-          <div
-            style={{
-              display: "flex",
-              gap: "12px",
-              flexWrap: "wrap",
-              marginTop: "18px",
-            }}
-          >
             <Link
+              className={styles.button}
               href="/startup/challenges"
-              className="btn"
             >
               Discover Challenges
             </Link>
-
-            <Link
-              href="/startup/applications"
-              className="btn"
-            >
-              My Applications
-            </Link>
-
-            <Link
-              href="/startup/pilots"
-              className="btn"
-            >
-              Track Pilot
-            </Link>
-          </div>
-        </div>
-
-        {/* AI MATCHED CHALLENGES */}
-        <div className="card" style={{ marginTop: "20px" }}>
-          <div className="eyebrow">
-            AI MATCHED OPPORTUNITIES
           </div>
 
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              gap: "10px",
-              flexWrap: "wrap",
-            }}
-          >
-            <h2 style={{ marginTop: "8px" }}>
-              Recommended Government Challenges
-            </h2>
+          <div className={styles.stats}>
+            {stats.map(([number, label, note]) => (
+              <div className={styles.card} key={label}>
+                <div className={styles.statNumber}>
+                  {number}
+                </div>
 
-            <Link
-              href="/startup/challenges"
-              style={{
-                textDecoration: "none",
-                fontWeight: 600,
-              }}
-            >
-              View all →
-            </Link>
-          </div>
+                <div className={styles.statLabel}>
+                  {label}
+                </div>
 
-          {/* CHALLENGE 1 */}
-          <div
-            style={{
-              border: "1px solid #e5e7eb",
-              borderRadius: "14px",
-              padding: "18px",
-              marginTop: "18px",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                gap: "15px",
-                flexWrap: "wrap",
-              }}
-            >
-              <div>
-                <h3>
-                  Smart Municipal Waste Optimization
-                </h3>
-
-                <p className="muted">
-                  AI-based route optimization for municipal
-                  waste collection.
-                </p>
-
-                <p className="muted">
-                  Department: Municipal Corporation
-                </p>
+                <div className={styles.statNote}>
+                  {note}
+                </div>
               </div>
-
-              <span
-                style={{
-                  background: "#dbeafe",
-                  color: "#1d4ed8",
-                  padding: "7px 12px",
-                  borderRadius: "999px",
-                  height: "fit-content",
-                  fontSize: "12px",
-                  fontWeight: 600,
-                }}
-              >
-                94% MATCH
-              </span>
-            </div>
+            ))}
           </div>
 
-          {/* CHALLENGE 2 */}
-          <div
-            style={{
-              border: "1px solid #e5e7eb",
-              borderRadius: "14px",
-              padding: "18px",
-              marginTop: "12px",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                gap: "15px",
-                flexWrap: "wrap",
-              }}
-            >
-              <div>
-                <h3>
-                  Intelligent Traffic Management
-                </h3>
-
-                <p className="muted">
-                  Predictive analytics to reduce congestion
-                  at major intersections.
-                </p>
-
-                <p className="muted">
-                  Department: Urban Transport Authority
-                </p>
-              </div>
-
-              <span
-                style={{
-                  background: "#dbeafe",
-                  color: "#1d4ed8",
-                  padding: "7px 12px",
-                  borderRadius: "999px",
-                  height: "fit-content",
-                  fontSize: "12px",
-                  fontWeight: 600,
-                }}
-              >
-                87% MATCH
-              </span>
-            </div>
+          <div className={styles.sectionTitle}>
+            Your Innovation Pipeline
           </div>
 
-          {/* CHALLENGE 3 */}
-          <div
-            style={{
-              border: "1px solid #e5e7eb",
-              borderRadius: "14px",
-              padding: "18px",
-              marginTop: "12px",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                gap: "15px",
-                flexWrap: "wrap",
-              }}
-            >
-              <div>
-                <h3>
-                  Water Leakage Detection
-                </h3>
-
-                <p className="muted">
-                  Smart monitoring system for identifying
-                  leakage and abnormal water usage.
-                </p>
-
-                <p className="muted">
-                  Department: Public Utilities
-                </p>
-              </div>
-
-              <span
-                style={{
-                  background: "#dbeafe",
-                  color: "#1d4ed8",
-                  padding: "7px 12px",
-                  borderRadius: "999px",
-                  height: "fit-content",
-                  fontSize: "12px",
-                  fontWeight: 600,
-                }}
-              >
-                81% MATCH
-              </span>
-            </div>
-          </div>
-        </div>
-
-        {/* ACTIVE PILOT */}
-        <div
-          className="card"
-          style={{
-            marginTop: "20px",
-            marginBottom: "30px",
-          }}
-        >
-          <div className="eyebrow">ACTIVE PILOT</div>
-
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              gap: "20px",
-              flexWrap: "wrap",
-              marginTop: "10px",
-            }}
-          >
-            <div>
-              <h2>
-                Smart Municipal Waste Optimization
-              </h2>
-
-              <p className="muted">
-                Pilot #CN-2026-014
-              </p>
-
-              <p className="muted">
-                Week 6 of 8 • KPI validation in progress
-              </p>
-            </div>
-
-            <Link
-              href="/startup/pilots"
-              className="btn"
-            >
-              View Pilot
-            </Link>
-          </div>
-
-          <div style={{ marginTop: "20px" }}>
-            <div
-              style={{
-                height: "10px",
-                background: "#e5e7eb",
-                borderRadius: "999px",
-                overflow: "hidden",
-              }}
-            >
+          <div className={styles.pipeline}>
+            {pipeline.map(([number, name, value]) => (
               <div
-                style={{
-                  width: "75%",
-                  height: "100%",
-                  background: "#2563eb",
-                  borderRadius: "999px",
-                }}
-              ></div>
-            </div>
+                className={styles.pipelineCard}
+                key={number}
+              >
+                <div className={styles.pipelineNumber}>
+                  {number}
+                </div>
 
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                marginTop: "8px",
-                fontSize: "13px",
-              }}
-            >
-              <span className="muted">
-                Pilot progress
-              </span>
+                <div className={styles.pipelineName}>
+                  {name}
+                </div>
 
-              <strong>75%</strong>
-            </div>
+                <div className={styles.pipelineValue}>
+                  {value}
+                </div>
+              </div>
+            ))}
           </div>
-        </div>
 
+          <div className={styles.columns}>
+
+            <div className={styles.card}>
+              <div className={styles.sectionTitle}>
+                My Applications
+              </div>
+
+              {applications.map(
+                ([title, department, status, progress]) => (
+                  <div
+                    className={styles.challenge}
+                    key={title}
+                  >
+                    <div className={styles.challengeTop}>
+
+                      <div>
+                        <div className={styles.challengeTitle}>
+                          {title}
+                        </div>
+
+                        <div className={styles.department}>
+                          {department}
+                        </div>
+                      </div>
+
+                      <div className={styles.status}>
+                        {status}
+                      </div>
+
+                    </div>
+
+                    <div className={styles.progress}>
+                      <div
+                        className={styles.progressBar}
+                        style={{
+                          width: `${progress}%`,
+                        }}
+                      />
+                    </div>
+
+                    <div className={styles.bottom}>
+                      <span>
+                        Application progress
+                      </span>
+
+                      <span>
+                        {progress}%
+                      </span>
+                    </div>
+                  </div>
+                )
+              )}
+            </div>
+
+            <div className={styles.card}>
+              <div className={styles.sectionTitle}>
+                AI-Matched Opportunities
+              </div>
+
+              {opportunities.map(
+                ([name, department, score]) => (
+                  <div
+                    className={styles.opportunity}
+                    key={name}
+                  >
+                    <div className={styles.opportunityTop}>
+
+                      <div>
+                        <div className={styles.opportunityName}>
+                          {name}
+                        </div>
+
+                        <div className={styles.opportunityType}>
+                          {department}
+                        </div>
+                      </div>
+
+                      <div className={styles.aiBadge}>
+                        {score}
+                      </div>
+
+                    </div>
+                  </div>
+                )
+              )}
+            </div>
+
+          </div>
+
+        </div>
       </main>
     </div>
   );
